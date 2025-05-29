@@ -1,0 +1,54 @@
+/* src/styles/YourComponent.css */
+
+.base {
+  color: #2f03f0; 
+  border: .1px solid #9512f4;
+  border-radius: 1px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #cceb8d;
+}
+.react-flow__node-default {
+  padding: 5px;
+  border: 1px solid #1658d3;
+  border-radius: 5px;
+  background-color: #fae9d3;
+  width: 110px;
+  text-align: center;
+}
+
+.name {
+  font-size: .8em;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+
+.name-icon {
+  width: 16px;
+  height: 12px;
+  margin-right: 8px;
+}
+
+
+.has-name {
+  color: #2ecc71; /* Green color */
+}
+
+.age {
+  font-size: .7em;
+  color: #3498db; /* Blue color */
+}
+
+.has-age {
+  font-weight: bold;
+   font-size: .7em;
+}
+
+.country {
+  font-size: .7em;
+  color: #9b59b6; /* Purple color */
+}
+
+.has-country {
+  text-decoration: underline;
+}

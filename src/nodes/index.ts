@@ -1,21 +1,30 @@
 import type { NodeTypes } from '@xyflow/react';
 
 import { PositionLoggerNode } from './PositionLoggerNode';
+import { JourneyNode } from './JourneyNode';
+import { TouchpointNode } from './TouchpointNode';
+import { BookingNode } from './BookingNode';
+
+
 import { AppNode } from './types';
 
 export const initialNodes: AppNode[] = [
-  { id: 'a', type: 'input', position: { x: 0, y: 0 }, data: { label: 'Journey' } },
+  { id: 'a', type: 'journey', position: { x: 0, y: 0 }, data: { name: "John", age: 36, country: "USA" } },
 
-  { id: 'b',  type: 'position-logger',  position: { x: 0, y: 100 }, data: { label: 'Touchpoints' } },
+  { id: 'b',  type: 'touchpoint',  position: { x: 0, y: 100 }, data: { email: 'john@gmail.com' , mobile : 8165489654, 
+    fax : '+1-212-555-1234' , twitter : 'john@twitter.com'} },
   {
     id: 'c',
-    type: 'output',
+    type: 'booking',
     position: { x: 0, y: 200 },
-    data: { label: 'Booking' },
+    data: { bookingId : 12345, date : '12-Nov-2003' , stay : 8165489654, totalPerson : 4 },
   },
 ];
 
 export const nodeTypes = {
   'position-logger': PositionLoggerNode,
-  // Add any of your custom nodes here!
+  'journey': JourneyNode ,
+  'touchpoint': TouchpointNode,
+  'booking': BookingNode,
+
 } satisfies NodeTypes;

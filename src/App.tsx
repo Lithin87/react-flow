@@ -38,7 +38,7 @@ export default function App() {
     >
       <Background  gap={10}
        color="#FFA500"
-         variant={BackgroundVariant.Cross}/>
+         variant={BackgroundVariant.Dots}/>
       <MiniMap />
       <Controls />
     </ReactFlow>
