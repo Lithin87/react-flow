@@ -8,6 +8,7 @@ import {
   addEdge,
   useNodesState,
   useEdgesState,
+  useReactFlow,
   type OnConnect,
 } from '@xyflow/react';
 
@@ -25,18 +26,23 @@ export default function App() {
     [setEdges]
   );
 
+  const { toObject } = useReactFlow(); 
+
     // Define your API endpoint here
     const API_ENDPOINT = 'YOUR_API_ENDPOINT_HERE'; // <--- IMPORTANT: Replace with your actual API endpoint
 
+
+
     const sendHelloToAPI = useCallback(async () => {
       try {
+        const flowData = toObject();
         const response = await fetch(API_ENDPOINT, {
           method: 'POST', // Or 'GET', 'PUT', etc., depending on your API
           headers: {
             'Content-Type': 'application/json', // Specify content type for JSON data
             // Add any other headers your API might require (e.g., Authorization)
           },
-          body: JSON.stringify({ message: 'hello' }), // Send the string as a JSON object
+          body: JSON.stringify({ message: flowData }), // Send the string as a JSON object
         });
   
         if (!response.ok) {
