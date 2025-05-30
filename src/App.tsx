@@ -26,7 +26,7 @@ export default function App() {
     [setEdges]
   );
 
-  const { toObject } = useReactFlow(); 
+  // const { toObject } = useReactFlow(); 
 
     // Define your API endpoint here
     const API_ENDPOINT = 'YOUR_API_ENDPOINT_HERE'; // <--- IMPORTANT: Replace with your actual API endpoint
@@ -35,7 +35,7 @@ export default function App() {
 
     const sendHelloToAPI = useCallback(async () => {
       try {
-        const flowData = toObject();
+        const flowData = { nodes , edges};
         const response = await fetch(API_ENDPOINT, {
           method: 'POST', // Or 'GET', 'PUT', etc., depending on your API
           headers: {
