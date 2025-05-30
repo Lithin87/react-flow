@@ -36,13 +36,14 @@ export default function App() {
     const sendHelloToAPI = useCallback(async () => {
       try {
         const flowData = { nodes , edges};
+        const newFlow =  JSON.stringify(flowData, null, 2);
         const response = await fetch(API_ENDPOINT, {
           method: 'POST', // Or 'GET', 'PUT', etc., depending on your API
           headers: {
             'Content-Type': 'application/json', // Specify content type for JSON data
             // Add any other headers your API might require (e.g., Authorization)
           },
-          body: JSON.stringify({ message: flowData }), // Send the string as a JSON object
+          body: JSON.stringify({ message: newFlow }), // Send the string as a JSON object
         });
   
         if (!response.ok) {
