@@ -26,8 +26,19 @@ export function JourneyNode({
 
      
   
-  <Handle type="source" position={Position.Bottom} id="bottom-source" />
-  
+  {/* Customized Handle (transparent or styled) */}
+      <Handle
+        type="source"
+        position={Position.Bottom}
+        id="bottom-source"
+        style={{
+          width: '.01px',    // Hide the circle
+          height: '.01px',   // Hide the circle
+          background: 'green', // Optional: ensures invisibility
+            border: 'blue',  
+         
+        }}
+      />
     </div>
   );
 }
