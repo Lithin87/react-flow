@@ -4,7 +4,7 @@ import nameIcon from '../images/name.png';
 import ageIcon from '../images/age.png';
 import countryIcon from '../images/country.png';
 
-import { type JourneyNode } from './types';
+import { type JourneyNode } from './nodes';
 
 export function JourneyNode({
   data,

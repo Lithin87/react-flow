@@ -14,7 +14,7 @@ import {
 
 import '@xyflow/react/dist/style.css';
 
-import { initialNodes, nodeTypes } from './nodes';
+import { initialNodes, nodeTypes } from './nodes/nodes';
 import { initialEdges, edgeTypes } from './edges';
 
 

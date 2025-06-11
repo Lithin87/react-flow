@@ -7,7 +7,7 @@ import twitterIcon from '../images/twitter.png';
 // import * as icons from '../images';
 
 
-import { type TouchpointNode } from './types';
+import { type TouchpointNode } from './nodes';
 
 export function TouchpointNode({
   data,

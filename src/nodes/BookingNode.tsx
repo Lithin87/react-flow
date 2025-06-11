@@ -4,7 +4,7 @@ import dateIcon from '../images/date.jpg'
 import countryIcon from '../images/country.png'
 import totalPersonIcon from '../images/totalPerson.jpg'
 
-import { type BookingNode } from './types';
+import { type BookingNode } from './nodes';
 
 export function BookingNode({
   data,
