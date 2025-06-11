@@ -26,28 +26,22 @@ export default function App() {
     [setEdges]
   );
 
-  // const { toObject } = useReactFlow(); 
-
-    // Define your API endpoint here
-    const API_ENDPOINT = 'YOUR_API_ENDPOINT_HERE'; // <--- IMPORTANT: Replace with your actual API endpoint
-
-
+    const API_ENDPOINT = 'YOUR_API_ENDPOINT_HERE'; 
 
     const sendHelloToAPI = useCallback(async () => {
+      const flowData = { nodes , edges};
+      const newFlow =  JSON.stringify(flowData, null, 2);
+      console.log('API Response:', JSON.stringify({ message: newFlow }));
       try {
-        const flowData = { nodes , edges};
-        const newFlow =  JSON.stringify(flowData, null, 2);
         const response = await fetch(API_ENDPOINT, {
-          method: 'POST', // Or 'GET', 'PUT', etc., depending on your API
+          method: 'POST', 
           headers: {
-            'Content-Type': 'application/json', // Specify content type for JSON data
-            // Add any other headers your API might require (e.g., Authorization)
+            'Content-Type': 'application/json', 
           },
-          body: JSON.stringify({ message: newFlow }), // Send the string as a JSON object
+          body: JSON.stringify({ message: newFlow }), 
         });
   
         if (!response.ok) {
-          // Handle HTTP errors (e.g., 404, 500)
           throw new Error(`HTTP error! status: ${response.status}`);
         }
   
@@ -56,7 +50,7 @@ export default function App() {
         alert('String "hello" sent successfully!'); // Provide user feedback
       } catch (error) {
         console.error('Error sending data to API:', error);
-        alert('Failed to send string "hello". Check console for details.'); // Provide user feedback
+        alert('Failed to send string "hello". Check console for details.' + newFlow ); // Provide user feedback
       }
     }, [API_ENDPOINT]); // Depend on API_ENDPOINT if it can change
   
@@ -75,10 +69,10 @@ export default function App() {
     <button
         onClick={sendHelloToAPI}
         style={{
-          position: 'absolute', // Position the button
-          bottom: 20, // Adjust position as needed
-          left: 20, // Adjust position as needed
-          zIndex: 10, // Ensure it's above the ReactFlow elements
+          position: 'absolute', 
+          bottom: 20, 
+          left: 20, 
+          zIndex: 10, 
           padding: '10px 15px',
           backgroundColor: '#007bff',
           color: 'white',
